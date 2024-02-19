@@ -1,30 +1,47 @@
-# React + TypeScript + Vite
+## リポジトリ概要
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ゆめみのフロントエンド課題
 
-Currently, two official plugins are available:
+## アーキテクチャ
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ディレクトリ構成
 
-## Expanding the ESLint configuration
+- src
+  - components
+    - commons 共通コンポーネント
+    - features
+      - featureA →機能A
+        - hooks.ts
+        - index.tsx
+        - types.ts
+        - api.ts
+      - featureB
+        - hooks.ts
+        - index.tsx
+        - types.ts
+        - api.ts
+  - constants 定数系の定義
+  - pages
+    - PageA.tsx
+    - PageB.tsx
+  - utils
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## 各ディレクトリの説明
 
-- Configure the top-level `parserOptions` property like this:
+### features
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["./tsconfig.json", "./tsconfig.node.json"],
-    tsconfigRootDir: __dirname,
-  },
-};
-```
+各機能毎の、UIやロジックをまとめる
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- hooks.ts カスタムhooksの定義をする
+- index.tsx　UIコンポーネント
+- api.ts　api通信を行う。hooks.tsでimportして使う。
+- type.ts featureのみで使う型定義ファイル
+
+### pages
+
+ページをまとめたディレクトリ。必要なコンポーネントをimportして使う。
+※pages→pagesのimportは禁止
+
+### constants
+
+定数を定義する
