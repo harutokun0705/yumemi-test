@@ -30,7 +30,7 @@
 
 ### features
 
-各機能毎の、UIやロジックをまとめる
+機能ごとにUIやロジックをまとめる
 
 - hooks.ts カスタムhooksの定義をする
 - index.tsx　UIコンポーネント
